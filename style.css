@@ -1,0 +1,66 @@
+/* Reset de estilos padrão */
+body, h1, p, input, button{
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  body {
+   font-family: monospace   ;
+    background-color: #e6e1c2;
+  }
+  
+  /* estilos para o cabeçalho */
+  .cadastro.titulo {
+    font-family: monospace;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* estilos para os elementos de entrada */
+  input {
+    font-family: monospace;
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 80%;
+  }
+  
+  /* Estilos para os botões */
+  button {
+    font-family: monospace;
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+    background-color: #bf0a0d;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* estilos para o carrossel */
+  #carrosel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #carroselImagem {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  #anterior, #proximo {
+    background-color: #bf0a0d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  img{
+    counter-reset: none; width: 300px;
+height: auto;  }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Biblioteca.com.br</title>
+</head>
+<body>
+    <h1 class="cadastro.titulo">Cadastro de livros</h1>
+    <input id="nomelivro" placeholder="Nome" type="text">
+    <input id="autorLivro" placeholder="Autor" type="text">
+    <input id="anoLivro" placeholder="Ano" type="text">
+    <button onclick="adicionar()">Adicionar Livro</button>
+    <button onclick="mostrarLivros()">Mostrar</button>
+
+    <div id="carrosel">
+        <img id="carroselImagem" src="" alt="passagem-de-imagem">
+        <button id="anterior">Anterior</button>
+        <button id="proximo">Próximo</button>
+    </div>
+
+    <script>
+
+let imgIndice = 0;
+const IMAGENS = ['herobrine.jpg', 'it a coisa.jpg', 'diario de um banana.jpg'];
+const prevButton = document.getElementById('anterior');
+const nextButton = document.getElementById('proximo');
+
+var IMG = document.getElementById('carroselImagem');
+
+function carregar() {
+    IMG.src = IMAGENS[imgIndice];
+};
+
+prevButton.addEventListener('click', () => {
+    if(imgIndice > 0) {
+    --imgIndice
+    //imgindice = imgindice - 1;
+    carregar();}
+});
+
+nextButton.addEventListener('click',() => {
+    var limite=(IMAGENS.length) -1 
+    if (imgIndice < limite) {
+    ++imgIndice
+    //imgindice = imgindice + 1;
+    carregar();}
+});
+carregar();
+
+let biblioteca = [];
+
+function cadastro(nome, autor, ano){
+    var livro = {
+        titulo: nome,
+        autor: autor,
+        ano: ano
+    };
+    biblioteca.push(livro)
+}
+
+function adicionar (){
+    let nome = document.getElementById('nomeLivro').value;
+    let autor = document.getElementById('autorLivro').value;
+    let ano = document.getElementById('anoLivro').value;
+    cadastro(nome, autor, ano); 
+}
+function mostrarLivros (){
+    console.log(`resultado:${biblioteca[0].titulo}`);
+};
+
+
+    </script>
+</body>
+</html>
